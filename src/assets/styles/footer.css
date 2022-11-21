@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 15px 0;
+  box-sizing: border-box;
+  background: var(--color-background-footer);
+}
+
+.copyright {
+  margin: 0;
+  color: var(--color-font-footer);
+}

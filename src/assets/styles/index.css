@@ -1,1 +1,12 @@
-@import "./test.css"
+@import "./normalize.css";
+
+@import "../fonts/index.css";
+@import "./colors.css";
+
+@import "./text.css";
+@import "./page.css";
+@import "./header.css";
+@import "./main.css";
+@import "./footer.css";
+
+@import "./support.css";

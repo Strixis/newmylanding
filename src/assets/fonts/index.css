@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'lobster';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./lobster-regular.woff2') format('woff2');
+  src: url('./lobster-regular.woff') format('woff');
+  src: url('./lobster-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'oswald';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./oswald-regular.woff2') format('woff2');
+  src: url('./oswald-regular.woff') format('woff');
+  src: url('./oswald-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'oswald';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./oswald-semibold.woff2') format('woff2');
+  src: url('./oswald-semibold.woff') format('woff');
+  src: url('./oswald-semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'raleway';
+  font-weight: 300;
+  font-style: normal;
+  src: url('./raleway-light.woff2') format('woff2');
+  src: url('./raleway-light.woff') format('woff');
+  src: url('./raleway-light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'raleway';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./raleway-medium.woff2') format('woff2');
+  src: url('./raleway-medium.woff') format('woff');
+  src: url('./raleway-medium.ttf') format('truetype');
+}

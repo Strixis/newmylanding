@@ -1,0 +1,9 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  min-width: 360px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--color-background-main);
+}

@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 7px 14px;
+  box-sizing: border-box;
+  background: var(--color-background-header);
+  border-radius: 0 0 14px 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.logo {
+  margin: 0 40px 0 0;
+}
+
+.top-menu {
+  width: 100%;
+}
+.top-menu_link {
+  text-decoration: none;
+  color: var(--color-font-header);
+  margin: 0 7px 0 0;
+}
+.top-menu_link:last-child {
+  margin-right: 0;
+}
+.top-menu_link:hover {
+  color: var(--color-font-header-hover);
+}
+
+.slogan {
+  flex-shrink: 0;
+  color: var(--color-font-header);
+}

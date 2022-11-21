@@ -1,0 +1,10 @@
+.__hidden {
+  opacity: 0;
+  height: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

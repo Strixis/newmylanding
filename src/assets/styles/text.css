@@ -1,0 +1,47 @@
+.text__main {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.text__header {
+  font-family: 'lobster', fantasy;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.text__presentation-menu {
+  font-family: oswald, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.text__heading {
+  font-family: oswald, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.text__sub {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 21px;
+}
+
+.text__footer {
+  font-family: lobster, fantasy;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
