@@ -14,6 +14,14 @@
   line-height: 17px;
 }
 
+.text__top-menu-button {
+  font-family: 'lobster', fantasy;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 17px;
+}
+
 .text__presentation-menu {
   font-family: oswald, sans-serif;
   font-style: normal;

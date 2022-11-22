@@ -1,8 +1,9 @@
 import 'styles';
 
 import * as Utils from './assets/scripts/Utils';
-import "./assets/scripts/SwitchPresentationSection";
 import { SwitchPresentationSection } from './assets/scripts/SwitchPresentationSection';
+import { ToggleTopMenu } from './assets/scripts/ToggleTopMenu';
+
 
 Utils.addIdToChildren({
   parentId: 'presentation-welcome',
@@ -81,4 +82,14 @@ SwitchPresentationSection({
   visibilityClass: '__hidden',
   activeControlClass: 'presentation-menu_link__active',
   timing: getComputedStyle(currentElement).transitionDuration.slice(0, -1) * 1000
+});
+
+ToggleTopMenu({
+  obSymbols: {
+    open: 'M',
+    close: 'X'
+  },
+  controlElement: document.getElementById('top-menu-control'),
+  openMenuClass: '__open',
+  menuElement: document.getElementById('top-menu')
 });

@@ -1,0 +1,42 @@
+@media screen and ( max-width: 569px ) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin: 0 7px 0 0;
+  }
+
+  .top-menu {
+    order: 3;
+    overflow: hidden;
+    height: 0;
+    transition: height .5s;
+  }
+  .top-menu_link {
+    display: block;
+    padding: 7px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .top-menu_button {
+    display: block;
+  }
+
+  .presentation_photo {
+    margin: 0 auto 7px auto;
+  }
+
+  .presentation-menu {
+    flex-direction: column;
+  }
+  .presentation-menu_link {
+    display: block;
+    width: 100%;
+  }
+
+  .text__main {
+    text-align: center;
+  }
+}

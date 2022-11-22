@@ -1,6 +1,6 @@
 /**
  * Переключает отображение секций
- * @author Strixis <nivem-strixis@mail.ru>
+ * @author Постников К. В. "Strixis" <nivem-strixis@mail.ru>
  * @param {Object} settings - объект с настройками
  * @param {boolean} settings.debug - режим отладки, позволяет вывести в консоль аргументы функции
  * @param {Element} settings.navigationElement - элемент, содержащий элементы управления

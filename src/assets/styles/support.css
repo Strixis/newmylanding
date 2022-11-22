@@ -3,6 +3,10 @@
   height: 0;
 }
 
+.__open {
+  height: 93px;
+}
+
 .clearfix::after {
   content: "";
   clear: both;

@@ -1,6 +1,6 @@
 /**
  * Добавляет id дочерним элементам с заданным тэгом по формуле parentId + separator + childId + separator + index.
- * @author Strixis <nivem-strixis@mail.ru>
+ * @author Постников К. В. "Strixis" <nivem-strixis@mail.ru>
  * @param {Object} settings - объект с настройками
  * @param {boolean} settings.debug - режим отладки, позволяет вывести в консоль аргументы функции
  * @param {string} settings.parentId - id родительского элемента
@@ -46,7 +46,7 @@ export function addIdToChildren(settings) {
 
 /**
  * Отображает текущую дату в виде textNode в родительском элементе
- * @author Strixis <nivem-strixis@mail.ru>
+ * @author Постников К. В. "Strixis" <nivem-strixis@mail.ru>
  * @param {Object} settings - объект с настройками
  * @param {boolean} settings.debug - режим отладки, позволяет вывести в консоль аргументы функции
  * @param {Element} settings.parentElement - родительский элемент
@@ -71,7 +71,7 @@ export function renderTodayDate(settings) {
 
 /**
  * Отображает возраст в виде textNode в родительском элементе
- * @author Strixis <nivem-strixis@mail.ru>
+ * @author Постников К. В. "Strixis" <nivem-strixis@mail.ru>
  * @param {Object} settings - объект с настройками
  * @param {boolean} settings.debug - режим отладки, позволяет вывести в консоль аргументы функции
  * @param {Element} settings.parentElement - родительский элемент

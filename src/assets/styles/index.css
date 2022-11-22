@@ -9,4 +9,7 @@
 @import "./main.css";
 @import "./footer.css";
 
+@import "./adaptive_768.css";
+@import "./adaptive_570.css";
+
 @import "./support.css";
