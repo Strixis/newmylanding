@@ -85,7 +85,7 @@ module.exports = (_, { mode }) => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'title',
+      title: 'Strixis',
       favicon: path.resolve(__dirname, 'src', 'favicon.png'),
       template: path.resolve(__dirname, 'src', 'index.html'),
       filename: 'index.html',

@@ -1,8 +1,8 @@
 import 'styles';
 
-import * as Utils from './assets/scripts/Utils';
-import { SwitchPresentationSection } from './assets/scripts/SwitchPresentationSection';
-import { ToggleTopMenu } from './assets/scripts/ToggleTopMenu';
+import * as Utils from 'scripts/Utils';
+import { SwitchPresentationSection } from 'scripts/SwitchPresentationSection';
+import { ToggleTopMenu } from 'scripts/ToggleTopMenu';
 
 
 Utils.addIdToChildren({

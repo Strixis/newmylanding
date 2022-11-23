@@ -1,6 +1,6 @@
 @import "./normalize.css";
 
-@import "../fonts/index.css";
+@import "fonts/index.css";
 @import "./colors.css";
 
 @import "./text.css";

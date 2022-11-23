@@ -10,6 +10,11 @@
   margin: 0 0 24px;
 }
 .presentation_photo {
+  display: block;
+  flex-shrink: 0;
+  width: 200px;
+  height: 270px;
+  overflow: hidden;
   margin: 0 56px 0 0;
 }
 .presentation_content {
@@ -30,7 +35,7 @@
   border: none;
   border-radius: 4px;
   margin: 0 7px 0 0;
-  transition: background .7s ease-out;
+  transition: background-color .7s ease-out;
   color: var(--color-font-heading-mini)
 }
 .presentation-menu_link:hover {
@@ -60,14 +65,18 @@
 }
 .link__projects::before,
 .link__lab::before {
+  display: block;
+  width: 33px;
+  height: 44px;
+  overflow: hidden;
   margin: 0 14px 0 0;
   float: left;
 }
 .link__projects::before {
-  content: url("../img/marker-project.svg");
+  content: url("img/marker-project.svg");
 }
 .link__lab::before {
-  content: url("../img/marker-lab.svg");
+  content: url("img/marker-lab.svg");
 }
 
 .section {

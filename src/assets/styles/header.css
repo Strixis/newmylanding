@@ -14,6 +14,12 @@
 .logo {
   margin: 0 40px 0 0;
 }
+.logo_img {
+  display: block;
+  width: 36px;
+  height: 47px;
+  overflow: hidden;
+}
 
 .top-menu {
   width: 100%;
