@@ -12,6 +12,7 @@ module.exports = (_, { mode }) => ({
   resolve: {
     extensions: [
       '.js',
+      '.mjs',
       '.css',
     ],
     alias: {
@@ -31,7 +32,7 @@ module.exports = (_, { mode }) => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(m)?js$/,
         exclude: [
           /node_modules/i,
           /dist/i,
