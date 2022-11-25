@@ -4,7 +4,7 @@
   "description": "Rework of landing for strixis",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine",
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production"
   },
@@ -17,6 +17,8 @@
     "css-loader": "^6.7.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "html-webpack-plugin": "^5.5.0",
+    "jasmine": "^4.5.0",
+    "jsdom": "^20.0.3",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.19",
     "postcss-loader": "^7.0.1",
