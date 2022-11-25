@@ -51,13 +51,13 @@ export function addIdToChildren(settings) {
  * @param {boolean} settings.debug - режим отладки, позволяет вывести в консоль аргументы функции
  * @param {Element} settings.parentElement - родительский элемент
  */
-export function renderTodayDate(settings) {
+export function renderTodayYear(settings) {
   if (!settings) {
-    console.warn('<renderTodayDate>: Не задано settings Выполнение прервано.');
+    console.warn('<renderTodayYear>: Не задано settings Выполнение прервано.');
     return
   };
   if (!settings.parentElement) {
-    console.warn('<renderTodayDate>: Не задано settings.parentElement. Выполнение прервано.');
+    console.warn('<renderTodayYear>: Не задано settings.parentElement. Выполнение прервано.');
     return
   };
 

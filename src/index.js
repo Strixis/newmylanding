@@ -65,7 +65,7 @@ Utils.renderOld({
 })
 
 let copyrightLastYearElement = document.querySelector('[data-copyright]');
-Utils.renderTodayDate({
+Utils.renderTodayYear({
   parentElement: copyrightLastYearElement
 });
 
