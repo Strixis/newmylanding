@@ -3,6 +3,163 @@ import fs from 'fs';
 
 import * as Utils from '../../src/assets/scripts/Utils.mjs';
 
+describe('Набор тестов для функции addIdToChildren', function() {
+  beforeEach(function() {
+    const index = fs.readFileSync('src/index.html', 'utf-8');
+    global.document = (new jsdom.JSDOM(index)).window.document;
+
+    spyOn(console, 'log');
+    spyOn(console, 'warn');
+  });
+
+  it('При отсутствии настроек в консоль выводится предупреждение',
+    function() {
+      Utils.addIdToChildren();
+      expect(console.warn).toHaveBeenCalled();
+    }
+  );
+  it('При отсутствии настроек в консоль выводится предупреждение с сообщением об ошибке',
+    function() {
+      let message = '<addIdToChildren>: Не задано settings Выполнение прервано.';
+
+      Utils.addIdToChildren();
+      expect(console.warn).toHaveBeenCalledWith(message);
+    }
+  );
+  it('При отсутствии в настройках родительского id в консоль выводится предупреждение',
+    function() {
+      let settings = {};
+
+      Utils.addIdToChildren(settings);
+      expect(console.warn).toHaveBeenCalled();
+    }
+  );
+  it('При отсутствии в настройках родительского id в консоль выводится предупреждение с сообщением об ошибке',
+    function() {
+      let settings = {};
+      let message = '<addIdToChildren>: Не задано settings.parentId. Выполнение прервано.';
+
+      Utils.addIdToChildren(settings);
+      expect(console.warn).toHaveBeenCalledWith(message);
+    }
+  );
+  it('При отсутствии в настройках тэга дочерних элементов в консоль выводится предупреждение',
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome'
+      };
+
+      Utils.addIdToChildren();
+      expect(console.warn).toHaveBeenCalled();
+    }
+  );
+  it('При отсутствии в настройках тэга дочерних элементов в консоль выводится предупреждение с сообщением об ошибке',
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome'
+      };
+      let message = '<addIdToChildren>: Не задано settings.childTag. Выполнение прервано.';
+
+      Utils.addIdToChildren(settings);
+      expect(console.warn).toHaveBeenCalledWith(message);
+    }
+  );
+  it('При отсутствии в настройках id дочерних элементов в консоль выводится предупреждение',
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome',
+        childTag: 'P'
+      };
+
+      Utils.addIdToChildren();
+      expect(console.warn).toHaveBeenCalled();
+    }
+  );
+  it('При отсутствии в настройках id дочерних элементов в консоль выводится предупреждение с сообщением об ошибке',
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome',
+        childTag: 'P'
+      };
+      let message = '<addIdToChildren>: Не задано settings.childId. Выполнение прервано.';
+
+      Utils.addIdToChildren(settings);
+      expect(console.warn).toHaveBeenCalledWith(message);
+    }
+  );
+  it('При отсутствии в настройках id дочерних элементов в консоль выводится предупреждение',
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome',
+        childTag: 'P',
+        childId: 'paragraph'
+      };
+
+      Utils.addIdToChildren();
+      expect(console.warn).toHaveBeenCalled();
+    }
+  );
+  it('При отсутствии в настройках id дочерних элементов в консоль выводится предупреждение с сообщением об ошибке',
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome',
+        childTag: 'P',
+        childId: 'paragraph'
+      };
+      let message = '<addIdToChildren>: Не задано settings.separator. Выполнение прервано.';
+
+      Utils.addIdToChildren(settings);
+      expect(console.warn).toHaveBeenCalledWith(message);
+    }
+  );
+  it('Когда в настройках установлено свойство для отладки в консоль выводится сообщение',
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome',
+        childTag: 'P',
+        childId: 'paragraph',
+        separator: '-',
+        debug: true
+      };
+
+      Utils.addIdToChildren(settings);
+      expect(console.log).toHaveBeenCalled();
+    }
+  );
+  it('Когда в настройках установлено свойство для отладки в консоль выводится сообщение c аргументами функции',
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome',
+        childTag: 'P',
+        childId: 'paragraph',
+        separator: '-',
+        debug: true
+      };
+      let message = settings;
+
+      Utils.addIdToChildren(settings);
+      expect(console.log).toHaveBeenCalledWith(message);
+    }
+  );
+  it(`Для каждого дочернего элемента с заданным тэгом устанавливается заданное id.
+      id задается по формуле parentId + separator + childId + separator + index`,
+    function() {
+      let settings = {
+        parentId: 'presentation-welcome',
+        childTag: 'P',
+        childId: 'paragraph',
+        separator: '-'
+      };
+      let expectation = settings.parentId + settings.separator + settings.childId + settings.separator
+
+      Utils.addIdToChildren(settings);
+      [...document.getElementById(settings.parentId).children].forEach((child, index) => {
+        expect(child.id).toBe(expectation + index)
+      })
+    }
+  );
+});
+
 describe('Набор тестов для функции renderTodayYear', function() {
   beforeEach(function() {
     const index = fs.readFileSync('src/index.html', 'utf-8');
@@ -286,3 +443,4 @@ describe('Набор тестов для функции renderOld', function() {
     }
   );
 });
+
