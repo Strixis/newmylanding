@@ -10,7 +10,7 @@
  * @param {string} settings.openMenuClass - класс меню при открытии
  * @param {Element} settings.menuElement - элемент с меню
  */
-export function ToggleTopMenu(settings) {
+ export function ToggleTopMenu(settings) {
   if (!settings) {
     console.warn('<ToggleTopMenu>: Не задано settings Выполнение прервано.');
     return
@@ -47,7 +47,7 @@ export function ToggleTopMenu(settings) {
   let isOpen = false;
   settings.controlElement.textContent = settings.obSymbols.open;
 
-  settings.controlElement.addEventListener('click', () => {
+  return () => {
     isOpen = !isOpen;
     if (isOpen) {
       settings.controlElement.textContent = settings.obSymbols.close;
@@ -55,5 +55,5 @@ export function ToggleTopMenu(settings) {
       settings.controlElement.textContent = settings.obSymbols.open;
     }
     settings.menuElement.classList.toggle(settings.openMenuClass);
-  })
+  }
 }

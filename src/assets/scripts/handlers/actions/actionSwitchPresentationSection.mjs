@@ -3,7 +3,6 @@
  * @author Постников К. В. "Strixis" <nivem-strixis@mail.ru>
  * @param {Object} settings - объект с настройками
  * @param {boolean} settings.debug - режим отладки, позволяет вывести в консоль аргументы функции
- * @param {Element} settings.navigationElement - элемент, содержащий элементы управления
  * @param {Element} settings.currentElement - элемент, который отображается сейчас
  * @param {Element} settings.currentControlElement - элемент управления, который отвечает за текущий отображаемый элемент
  * @param {Object} settings.obConnections - объект со связями "id элемента управления: элемент который отображается"
@@ -14,10 +13,6 @@
 export function SwitchPresentationSection(settings) {
   if (!settings) {
     console.warn('<SwitchPresentationSection>: Не задано settings Выполнение прервано.');
-    return
-  };
-  if (!settings.navigationElement) {
-    console.warn('<SwitchPresentationSection>: Не задано settings.navigationElement Выполнение прервано.');
     return
   };
   if (!settings.currentElement) {
@@ -51,7 +46,7 @@ export function SwitchPresentationSection(settings) {
 
   let timer = false;
 
-  settings.navigationElement.addEventListener('click', (event) => {
+  return (event) => {
     if (timer) return
     if (settings.currentControlElement.id == event.target.id) return
 
@@ -71,5 +66,5 @@ export function SwitchPresentationSection(settings) {
       settings.currentControlElement = document.getElementById(event.target.id);
       settings.currentControlElement.classList.toggle(settings.activeControlClass);
     }
-  });
+  }
 }

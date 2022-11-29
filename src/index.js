@@ -1,8 +1,8 @@
 import 'styles';
 
 import * as Utils from 'scripts/Utils';
-import { SwitchPresentationSection } from 'scripts/SwitchPresentationSection';
-import { ToggleTopMenu } from 'scripts/ToggleTopMenu';
+import { handlerSwitchPresentationSection } from './assets/scripts/handlers/handlerSwitchPresentationSection.mjs';
+import { handlerToggleTopMenu } from './assets/scripts/handlers/handlerToggleTopMenu.mjs';
 
 
 Utils.addIdToChildren({
@@ -69,27 +69,6 @@ Utils.renderTodayYear({
   parentElement: copyrightLastYearElement
 });
 
-let currentElement = document.getElementById('presentation-welcome');
-SwitchPresentationSection({
-  navigationElement: document.getElementById('presentation-navigation'),
-  currentElement,
-  currentControlElement: document.getElementById('presentation-navigation-welcome'),
-  obConnections: {
-    'presentation-navigation-welcome': currentElement,
-    'presentation-navigation-about-me': document.getElementById('presentation-about-me'),
-    'presentation-navigation-contacts': document.getElementById('presentation-contacts'),
-  },
-  visibilityClass: '__hidden',
-  activeControlClass: 'presentation-menu_link__active',
-  timing: getComputedStyle(currentElement).transitionDuration.slice(0, -1) * 1000
-});
-
-ToggleTopMenu({
-  obSymbols: {
-    open: 'M',
-    close: 'X'
-  },
-  controlElement: document.getElementById('top-menu-control'),
-  openMenuClass: '__open',
-  menuElement: document.getElementById('top-menu')
-});
+document.getElementById('presentation-navigation').addEventListener('click', handlerSwitchPresentationSection);
+document.getElementById('presentation-navigation').removeEventListener('click', handlerSwitchPresentationSection);
+document.getElementById('top-menu-control').addEventListener('click', handlerToggleTopMenu);
