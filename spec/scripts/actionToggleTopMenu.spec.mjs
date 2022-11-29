@@ -1,7 +1,7 @@
 import jsdom from 'jsdom';
 import fs from 'fs';
 
-import { ToggleTopMenu } from '../../src/assets/scripts/ToggleTopMenu.mjs';
+import { ToggleTopMenu } from '../../src/assets/scripts/handlers/actions/actionToggleTopMenu.mjs';
 
 describe('Набор тестов для функции ToggleTopMenu', function() {
   beforeEach(function() {
@@ -139,8 +139,9 @@ describe('Набор тестов для функции ToggleTopMenu', function
         debug: true
       };
       let expectation = settings.obSymbols.open;
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      settings.controlElement.addEventListener('click', handler);
       expect(settings.controlElement.textContent).toBe(expectation);
     }
   );
@@ -157,8 +158,9 @@ describe('Набор тестов для функции ToggleTopMenu', function
         debug: true
       };
       let expectation = settings.obSymbols.close;
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      settings.controlElement.addEventListener('click', handler);
       settings.controlElement.dispatchEvent(new window.MouseEvent('click'));
       expect(settings.controlElement.textContent).toBe(expectation);
     }
@@ -176,8 +178,9 @@ describe('Набор тестов для функции ToggleTopMenu', function
         debug: true
       };
       let expectation = settings.obSymbols.open;
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      settings.controlElement.addEventListener('click', handler);
       settings.controlElement.dispatchEvent(new window.MouseEvent('click'));
       settings.controlElement.dispatchEvent(new window.MouseEvent('click'));
       expect(settings.controlElement.textContent).toBe(expectation);
@@ -195,8 +198,9 @@ describe('Набор тестов для функции ToggleTopMenu', function
         menuElement: document.getElementById('top-menu'),
         debug: true
       };
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      settings.controlElement.addEventListener('click', handler);
       settings.controlElement.dispatchEvent(new window.MouseEvent('click'));
       expect([...settings.menuElement.classList].includes(settings.openMenuClass)).toBeTrue();
 

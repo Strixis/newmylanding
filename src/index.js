@@ -70,5 +70,4 @@ Utils.renderTodayYear({
 });
 
 document.getElementById('presentation-navigation').addEventListener('click', handlerSwitchPresentationSection);
-document.getElementById('presentation-navigation').removeEventListener('click', handlerSwitchPresentationSection);
 document.getElementById('top-menu-control').addEventListener('click', handlerToggleTopMenu);
