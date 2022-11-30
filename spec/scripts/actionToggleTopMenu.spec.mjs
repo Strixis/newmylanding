@@ -16,9 +16,12 @@ describe('Набор тестов для функции ToggleTopMenu', function
 
   it('При отсутствии настроек в консоль выводится предупреждение с сообщением об ошибке',
     function() {
+      let settings = null;
+      let controlElement = document.getElementById('top-menu-control');
       let message = '<ToggleTopMenu>: Не задано settings Выполнение прервано.';
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu();
+      controlElement.addEventListener('click', handler);
       expect(console.warn).toHaveBeenCalled();
       expect(console.warn).toHaveBeenCalledWith(message);
     }
@@ -26,9 +29,11 @@ describe('Набор тестов для функции ToggleTopMenu', function
   it('При отсутствии в настройках символов открытия и закрытия в консоль выводится предупреждение с сообщением об ошибке',
     function() {
       let settings = {};
+      let controlElement = document.getElementById('top-menu-control');
       let message = '<ToggleTopMenu>: Не задано settings.obSymbols Выполнение прервано.';
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      controlElement.addEventListener('click', handler);
       expect(console.warn).toHaveBeenCalled();
       expect(console.warn).toHaveBeenCalledWith(message);
     }
@@ -39,8 +44,10 @@ describe('Набор тестов для функции ToggleTopMenu', function
         obSymbols: {}
       };
       let message = '<ToggleTopMenu>: Не задано settings.obSymbols.open Выполнение прервано.';
+      let controlElement = document.getElementById('top-menu-control');
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      controlElement.addEventListener('click', handler);
       expect(console.warn).toHaveBeenCalled();
       expect(console.warn).toHaveBeenCalledWith(message);
     }
@@ -53,8 +60,10 @@ describe('Набор тестов для функции ToggleTopMenu', function
         }
       };
       let message = '<ToggleTopMenu>: Не задано settings.obSymbols.close Выполнение прервано.';
+      let controlElement = document.getElementById('top-menu-control');
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      controlElement.addEventListener('click', handler);
       expect(console.warn).toHaveBeenCalled();
       expect(console.warn).toHaveBeenCalledWith(message);
     }
@@ -68,8 +77,10 @@ describe('Набор тестов для функции ToggleTopMenu', function
         }
       };
       let message = '<ToggleTopMenu>: Не задано settings.controlElement Выполнение прервано.';
+      let controlElement = document.getElementById('top-menu-control');
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      controlElement.addEventListener('click', handler);
       expect(console.warn).toHaveBeenCalled();
       expect(console.warn).toHaveBeenCalledWith(message);
     }
@@ -84,8 +95,9 @@ describe('Набор тестов для функции ToggleTopMenu', function
         controlElement: document.getElementById('top-menu-control')
       };
       let message = '<ToggleTopMenu>: Не задано settings.openMenuClass Выполнение прервано.';
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      settings.controlElement.addEventListener('click', handler);
       expect(console.warn).toHaveBeenCalled();
       expect(console.warn).toHaveBeenCalledWith(message);
     }
@@ -101,8 +113,9 @@ describe('Набор тестов для функции ToggleTopMenu', function
         openMenuClass: '__open'
       };
       let message = '<ToggleTopMenu>: Не задано settings.menuElement Выполнение прервано.';
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      settings.controlElement.addEventListener('click', handler);
       expect(console.warn).toHaveBeenCalled();
       expect(console.warn).toHaveBeenCalledWith(message);
     }
@@ -120,8 +133,9 @@ describe('Набор тестов для функции ToggleTopMenu', function
         debug: true
       };
       let message = settings;
+      let handler = ToggleTopMenu(settings);
 
-      ToggleTopMenu(settings);
+      settings.controlElement.addEventListener('click', handler);
       expect(console.log).toHaveBeenCalled();
       expect(console.log).toHaveBeenCalledWith(message);
     }
