@@ -1,0 +1,11 @@
+.top-menu {
+  transition: height .5s ease;
+}
+
+.presentation-menu_link {
+  transition: background-color .7s ease-out;
+}
+
+.presentation_section {
+  transition: .5s ease-in-out;
+}

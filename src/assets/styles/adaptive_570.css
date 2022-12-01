@@ -12,7 +12,6 @@
     order: 3;
     overflow: hidden;
     height: 0;
-    transition: height .5s;
   }
   .top-menu_link {
     display: block;

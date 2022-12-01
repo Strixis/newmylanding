@@ -12,4 +12,6 @@
 @import "./adaptive_768.css";
 @import "./adaptive_570.css";
 
+@import "./animations.css";
+
 @import "./support.css";
