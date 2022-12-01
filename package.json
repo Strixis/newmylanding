@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jasmine",
     "dev": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "prod": "jasmine && webpack --mode production"
   },
   "author": "Strixis",
   "license": "MIT",
